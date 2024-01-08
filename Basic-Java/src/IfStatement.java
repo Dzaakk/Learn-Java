@@ -2,7 +2,7 @@ public class IfStatement {
     public static void main(String[] args) {
 
         var nilai = 80;
-        var abse = 30;
+        var absen = 30;
 
         if (nilai >= 80 && absen >= 80){
             System.out.println("Nilai Anda A");
