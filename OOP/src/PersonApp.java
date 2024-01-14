@@ -8,10 +8,11 @@ public class PersonApp {
 
         person1.sayHello("Bambang");
 
-//        Person person2 = new Person();
+        Person person2 = new Person("Toro");
 
         Person person3;
-        person3 = new Person("Tono", "Jakarta");
+        person3 = new Person();
+        person3.name = "Caca";
         person3.sayHello("Mamang");
 
     }

@@ -5,8 +5,14 @@ class Person {
 
     //constructor
     Person(String paramName, String paramAddress){
-           name = paramName;
-           address = paramAddress;
+        name = paramName;
+        address = paramAddress;
+    }
+    Person(String paramName){
+        this(paramName, null);
+    }
+    Person(){
+        this(null);
     }
 
     void sayHello(String paramName){
