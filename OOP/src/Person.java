@@ -4,9 +4,9 @@ class Person {
     final String country = "Indonesia";
 
     //constructor
-    Person(String paramName, String paramAddress){
-        name = paramName;
-        address = paramAddress;
+    Person(String name , String address){
+        this.name = name;
+        this.address = address;
     }
     Person(String paramName){
         this(paramName, null);
@@ -16,6 +16,6 @@ class Person {
     }
 
     void sayHello(String paramName){
-        System.out.println("Hello " + paramName + ", My Name is " + name);
+        System.out.println("Hello " + paramName + ", My Name is " + this.name);
     }
 }
