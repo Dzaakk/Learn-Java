@@ -1,5 +1,6 @@
 package learn.application;
 
+import learn.data.Data;
 import learn.data.Product;
 
 public class Application {
@@ -8,5 +9,8 @@ public class Application {
 
         System.out.println(product.name);
         System.out.println(product.price);
+
+        Data data = new Data();
     }
+
 }
