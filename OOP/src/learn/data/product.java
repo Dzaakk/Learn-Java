@@ -14,7 +14,14 @@ public class Product {
         return "Product name:" + name + ", price:" + price;
     }
 
-    // generated
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((name == null) ? 0 : name.hashCode());
+        result = prime * result + price;
+        return result;
+    }
+
     public boolean equals(Object obj) {
         if (this == obj)
             return true;
