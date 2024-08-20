@@ -1,10 +1,12 @@
 package learn.application;
 
+import learn.annotation.Fancy;
 import learn.data.LoginRequest;
 import learn.error.ValidationException;
 import learn.util.ValidationUtil;
 
 public class ValidationApp {
+    @Fancy(name = "ValidationApp", tags = { "application", "java" })
     public static void main(String[] args) {
 
         LoginRequest loginRequest = new LoginRequest(null, null);
