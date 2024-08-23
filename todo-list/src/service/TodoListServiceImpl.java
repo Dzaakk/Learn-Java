@@ -6,7 +6,7 @@ import repository.TodoListRepository;
 public class TodoListServiceImpl implements TodoListService {
     private TodoListRepository todoListRepository;
 
-    public void setTodoListRepository(TodoListRepository todoListRepository) {
+    public TodoListServiceImpl(TodoListRepository todoListRepository) {
         this.todoListRepository = todoListRepository;
     }
 
@@ -20,7 +20,7 @@ public class TodoListServiceImpl implements TodoListService {
             var no = i + 1;
 
             if (todo != null) {
-                System.out.println(no + ". " + todo);
+                System.out.println(no + ". " + todo.getTodo());
             }
         }
     }
