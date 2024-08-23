@@ -27,8 +27,9 @@ public class TodoListServiceImpl implements TodoListService {
 
     @Override
     public void addTodoList(String todo) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'addTodoList'");
+        Todolist todolist = new Todolist(todo);
+        todoListRepository.add(todolist);
+        System.out.println("Success Add Todo : " + todo);
     }
 
     @Override
