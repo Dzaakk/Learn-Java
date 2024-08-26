@@ -54,7 +54,7 @@ public class TodoListView {
 
         var number = InputUtil.input("Nomor yang Dihapus (x Jika Batal)");
 
-        if (number.equals("X")) {
+        if (number.equals("x")) {
             // cancel
         } else {
             todoListService.removeTodoList(Integer.valueOf(number));
