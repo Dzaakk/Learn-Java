@@ -34,8 +34,12 @@ public class TodoListServiceImpl implements TodoListService {
 
     @Override
     public void removeTodoList(Integer number) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'removeTodoList'");
+        boolean success = todoListRepository.remove(number);
+        if (success) {
+            System.out.println("Success remove TODO : " + number);
+        } else {
+            System.out.println("Failed remove TODO : " + number);
+        }
     }
 
     public TodoListRepository getTodoListRepository() {
