@@ -1,13 +1,14 @@
 package Test.service;
 
 import entity.Todolist;
+import repository.TodoListRepository;
 import repository.TodoListRepositoryImpl;
 import service.TodoListService;
 import service.TodoListServiceImpl;
 
 public class TodoListServiceTest {
     public static void main(String[] args) {
-        testShowTodoList();
+        testAddTodolist();
     }
 
     public static void testShowTodoList() {
@@ -18,6 +19,17 @@ public class TodoListServiceTest {
         todoListRepository.data[2] = new Todolist("shower");
 
         TodoListService todoListService = new TodoListServiceImpl(todoListRepository);
+
+        todoListService.showTodoList();
+    }
+
+    public static void testAddTodolist() {
+        TodoListRepository todoListRepository = new TodoListRepositoryImpl();
+        TodoListService todoListService = new TodoListServiceImpl(todoListRepository);
+
+        todoListService.addTodoList("Take a break");
+        todoListService.addTodoList("Prepare meal");
+        todoListService.addTodoList("shower");
 
         todoListService.showTodoList();
     }
