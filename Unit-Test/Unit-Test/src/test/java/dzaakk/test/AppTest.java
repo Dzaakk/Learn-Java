@@ -1,4 +1,4 @@
-package dzaakk.unit.test;
+package dzaakk.test;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 

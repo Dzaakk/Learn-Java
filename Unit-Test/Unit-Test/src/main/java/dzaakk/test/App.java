@@ -1,4 +1,4 @@
-package dzaakk.unit.test;
+package dzaakk.test;
 
 /**
  * Hello world!
