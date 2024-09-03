@@ -9,6 +9,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayNameGeneration;
 import org.junit.jupiter.api.Test;
+import org.opentest4j.TestAbortedException;
 
 import dzaakk.test.generator.SimpleDisplayNameGenerator;
 
@@ -63,5 +64,13 @@ public class CalculatorTest {
     @Disabled
     public void testComingSoon() {
 
+    }
+
+    @Test
+    public void testAborted() {
+        var profile = System.getenv("PROFILE");
+        if (!"DEV".equals(profile)) {
+            throw new TestAbortedException("Test Aborted");
+        }
     }
 }
