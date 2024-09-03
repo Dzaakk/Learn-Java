@@ -1,6 +1,7 @@
 package dzaakk.test;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assumptions.*;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
@@ -73,4 +74,10 @@ public class CalculatorTest {
             throw new TestAbortedException("Test Aborted");
         }
     }
+
+    @Test
+    public void testAssumptions() {
+        assumeTrue("DEV".equals(System.getenv("PROFILE"))); // simplify of testAborted
+    }
+
 }
