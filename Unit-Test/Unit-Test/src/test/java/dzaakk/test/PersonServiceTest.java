@@ -36,7 +36,7 @@ public class PersonServiceTest {
     }
 
     @Test
-    void testPersonGetSuccess() {
+    void testGetPersonSuccess() {
         Mockito.when(personRepository.selectById("001"))
                 .thenReturn(new Person("001", "person1"));
 
@@ -45,5 +45,17 @@ public class PersonServiceTest {
         Assertions.assertNotNull(person);
         Assertions.assertEquals("001", person.getId());
         Assertions.assertEquals("person1", person.getName());
+    }
+
+    @Test
+    void testRegisterSuccess() {
+        var person = personService.register("person1");
+        Assertions.assertNotNull(person);
+        Assertions.assertEquals("person1", person.getName());
+        Assertions.assertNotNull(person.getId());
+
+        Mockito.verify(personRepository, Mockito.times(1))
+                .insert(new Person(person.getId(), "person1"));
+
     }
 }

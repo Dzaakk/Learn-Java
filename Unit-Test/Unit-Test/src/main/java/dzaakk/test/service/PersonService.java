@@ -1,5 +1,7 @@
 package dzaakk.test.service;
 
+import java.util.UUID;
+
 import dzaakk.test.data.Person;
 import dzaakk.test.repository.PersonRepository;
 
@@ -17,5 +19,11 @@ public class PersonService {
         } else {
             throw new IllegalArgumentException("Person not found");
         }
+    }
+
+    public Person register(String name) {
+        var person = new Person(UUID.randomUUID().toString(), name);
+        personRepository.insert(person);
+        return person;
     }
 }
