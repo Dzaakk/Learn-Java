@@ -17,7 +17,7 @@ public class ConnectionUtil {
         config.setIdleTimeout(60_000);
         config.setMaxLifetime(10 * 60_000);
 
-        dataSource = new HikariDataSource();
+        dataSource = new HikariDataSource(config);
     }
 
     public static HikariDataSource getDataSource() {
