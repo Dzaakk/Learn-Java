@@ -5,7 +5,9 @@ import java.sql.DatabaseMetaData;
 import java.sql.ParameterMetaData;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 import org.junit.jupiter.api.Test;
 
@@ -39,6 +41,25 @@ public class MetaDataTest {
         System.out.println(parameterMetaData.getParameterCount());
 
         preparedStatement.close();
+        connection.close();
+    }
+
+    @Test
+    void testResultSetMetaData() throws SQLException {
+        Connection connection = ConnectionUtil.getDataSource().getConnection();
+        Statement statement = connection.createStatement();
+        ResultSet resultSet = statement.executeQuery("SELECT * FROM sample_time");
+
+        ResultSetMetaData resultSetMetaData = resultSet.getMetaData();
+
+        for (int i = 1; i <= resultSetMetaData.getColumnCount(); i++) {
+            System.out.println("Name : " + resultSetMetaData.getColumnName(i));
+            System.out.println("Type : " + resultSetMetaData.getColumnType(i));
+            System.out.println("Type Name : " + resultSetMetaData.getColumnTypeName(i));
+        }
+
+        resultSet.close();
+        statement.close();
         connection.close();
     }
 }
