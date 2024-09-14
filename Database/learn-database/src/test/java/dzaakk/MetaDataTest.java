@@ -2,6 +2,8 @@ package dzaakk;
 
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
+import java.sql.ParameterMetaData;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -23,6 +25,20 @@ public class MetaDataTest {
             System.out.println("Table : " + tableName);
         }
 
+        connection.close();
+    }
+
+    @Test
+    void testParameterMetaData() throws SQLException {
+        Connection connection = ConnectionUtil.getDataSource().getConnection();
+        String sql = "INSERT INTO comments(email, comment) VALUES(?, ?)";
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+        ParameterMetaData parameterMetaData = preparedStatement.getParameterMetaData();
+
+        System.out.println(parameterMetaData.getParameterCount());
+
+        preparedStatement.close();
         connection.close();
     }
 }
