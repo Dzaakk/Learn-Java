@@ -1,6 +1,6 @@
-package repository;
+package dzaakk.repository;
 
-import entity.Todolist;
+import dzaakk.entity.Todolist;
 
 public interface TodoListRepository {
 
