@@ -4,14 +4,15 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.sql.DataSource;
 
 import dzaakk.entity.Todolist;
 
 public class TodoListRepositoryImpl implements TodoListRepository {
-
-    public Todolist[] data = new Todolist[10];
 
     private DataSource dataSource;
 
@@ -21,29 +22,25 @@ public class TodoListRepositoryImpl implements TodoListRepository {
 
     @Override
     public Todolist[] getAll() {
-        return data;
-    }
+        String sql = "SELECT id, todo FROM todolist";
+        try (Connection connection = dataSource.getConnection();
+                Statement statement = connection.createStatement();
+                ResultSet resultset = statement.executeQuery(sql)) {
 
-    public boolean isFull() {
-        var isFull = true;
-        for (int i = 0; i < data.length; i++) {
-            if (data[i] == null) {
-                isFull = false;
-                break;
+            List<Todolist> list = new ArrayList<>();
+            while (resultset.next()) {
+                Todolist todolist = new Todolist();
+                todolist.setId(resultset.getInt("id"));
+                todolist.setTodo(resultset.getString("todo"));
+
+                list.add(todolist);
             }
-        }
-        return isFull;
-    }
 
-    public void resizeIfFull() {
-        if (isFull()) {
-            var temp = data;
-            data = new Todolist[data.length + 10];
-
-            for (int i = 0; i < temp.length; i++) {
-                data[i] = temp[i];
-            }
+            return list.toArray(new Todolist[] {});
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
+
     }
 
     @Override

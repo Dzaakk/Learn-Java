@@ -1,6 +1,16 @@
 package dzaakk.entity;
 
 public class Todolist {
+    private Integer id;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     private String todo;
 
     public Todolist() {
