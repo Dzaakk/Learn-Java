@@ -1,4 +1,4 @@
-package entity;
+package dzaakk.entity;
 
 public class Todolist {
     private String todo;

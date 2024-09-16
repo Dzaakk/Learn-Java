@@ -1,10 +1,4 @@
-package Test.service;
-
-import entity.Todolist;
-import repository.TodoListRepository;
-import repository.TodoListRepositoryImpl;
-import service.TodoListService;
-import service.TodoListServiceImpl;
+package dzaakk.Test.service;
 
 public class TodoListServiceTest {
     public static void main(String[] args) {
@@ -12,41 +6,44 @@ public class TodoListServiceTest {
     }
 
     public static void testShowTodoList() {
-        TodoListRepositoryImpl todoListRepository = new TodoListRepositoryImpl();
+        // TodoListRepositoryImpl todoListRepository = new TodoListRepositoryImpl();
 
-        todoListRepository.data[0] = new Todolist("Take a break");
-        todoListRepository.data[1] = new Todolist("Prepare meal");
-        todoListRepository.data[2] = new Todolist("shower");
+        // todoListRepository.data[0] = new Todolist("Take a break");
+        // todoListRepository.data[1] = new Todolist("Prepare meal");
+        // todoListRepository.data[2] = new Todolist("shower");
 
-        TodoListService todoListService = new TodoListServiceImpl(todoListRepository);
+        // TodoListService todoListService = new
+        // TodoListServiceImpl(todoListRepository);
 
-        todoListService.showTodoList();
+        // todoListService.showTodoList();
     }
 
     public static void testAddTodoList() {
-        TodoListRepository todoListRepository = new TodoListRepositoryImpl();
-        TodoListService todoListService = new TodoListServiceImpl(todoListRepository);
+        // TodoListRepository todoListRepository = new TodoListRepositoryImpl();
+        // TodoListService todoListService = new
+        // TodoListServiceImpl(todoListRepository);
 
-        todoListService.addTodoList("Take a break");
-        todoListService.addTodoList("Prepare meal");
-        todoListService.addTodoList("shower");
+        // todoListService.addTodoList("Take a break");
+        // todoListService.addTodoList("Prepare meal");
+        // todoListService.addTodoList("shower");
 
-        todoListService.showTodoList();
+        // todoListService.showTodoList();
     }
 
     public static void testRemoveTodoList() {
-        TodoListRepository todoListRepository = new TodoListRepositoryImpl();
-        TodoListService todoListService = new TodoListServiceImpl(todoListRepository);
+        // TodoListRepository todoListRepository = new TodoListRepositoryImpl();
+        // TodoListService todoListService = new
+        // TodoListServiceImpl(todoListRepository);
 
-        todoListService.addTodoList("Take a break");
-        todoListService.addTodoList("Prepare meal");
-        todoListService.addTodoList("shower");
+        // todoListService.addTodoList("Take a break");
+        // todoListService.addTodoList("Prepare meal");
+        // todoListService.addTodoList("shower");
 
-        todoListService.showTodoList();
+        // todoListService.showTodoList();
 
-        todoListService.removeTodoList(5);
-        todoListService.removeTodoList(1);
-        todoListService.showTodoList();
+        // todoListService.removeTodoList(5);
+        // todoListService.removeTodoList(1);
+        // todoListService.showTodoList();
 
     }
 }

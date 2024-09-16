@@ -1,4 +1,4 @@
-package service;
+package dzaakk.service;
 
 public interface TodoListService {
     void showTodoList();

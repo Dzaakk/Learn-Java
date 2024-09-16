@@ -1,4 +1,4 @@
-package util;
+package dzaakk.util;
 
 import java.util.Scanner;
 

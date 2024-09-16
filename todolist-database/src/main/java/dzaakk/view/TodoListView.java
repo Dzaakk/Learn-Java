@@ -1,7 +1,7 @@
-package view;
+package dzaakk.view;
 
-import service.TodoListService;
-import util.InputUtil;
+import dzaakk.service.TodoListService;
+import dzaakk.util.InputUtil;
 
 public class TodoListView {
     private TodoListService todoListService;

@@ -1,7 +1,7 @@
-package service;
+package dzaakk.service;
 
-import entity.Todolist;
-import repository.TodoListRepository;
+import dzaakk.entity.Todolist;
+import dzaakk.repository.TodoListRepository;
 
 public class TodoListServiceImpl implements TodoListService {
     private TodoListRepository todoListRepository;
